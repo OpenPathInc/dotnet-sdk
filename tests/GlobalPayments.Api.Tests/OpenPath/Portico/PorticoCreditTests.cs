@@ -20,7 +20,7 @@ namespace GlobalPayments.Api.Tests.OpenPath.Portico
             ServicesContainer.ConfigureService(new PorticoConfig
             {
                 SecretApiKey = "skapi_cert_MTeSAQAfG1UA9qQDrzl-kz4toXvARyieptFwSKP24w",
-                OpenPathApiKey = "pnxuxwuAWaTQvCUU7NtMzAAUgxyd3TV7FrP3JCYy"
+                OpenPathApiKey = "hJ2nhz3dAXyjC5gvznJ5SeVQwwEA5XcMUPSUKnkG"
             });
 
             card = new CreditCardData

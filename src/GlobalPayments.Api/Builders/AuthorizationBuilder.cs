@@ -707,7 +707,10 @@ namespace GlobalPayments.Api.Builders {
                 if (openPathResult.Status == OpenPathStatusType.Error || 
                     openPathResult.Status == OpenPathStatusType.Declined ||
                     openPathResult.Status == OpenPathStatusType.Rejected) {
-                    throw new GatewayException(openPathResult.Results?.Last());
+                    var message = openPathResult.Message;
+                    if (string.IsNullOrWhiteSpace(message) && openPathResult.Results.Any())
+                        message = openPathResult.Results?.Last();
+                    throw new GatewayException(message);
                 }
 
                 // check if the transaction is already processed in OpenPath
